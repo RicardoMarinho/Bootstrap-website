@@ -17,16 +17,22 @@
     <header class="topo">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a href="#topo" class="navbar-brand">{{app}}</a>
+                <a href="#topo" onclick="$('body').animatescroll()"  class="navbar-brand">{{app}}</a>
                 <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle Navigation">menu</button>
             </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">Nossas Cervejas</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">História</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contactos</a></li>
+                    <li class="nav-item">
+                        <a href="#" onclick="$('#cervejas').animatescroll()"  class="nav-link">Nossas Cervejas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="$('#historia').animatescroll()"  class="nav-link">História</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="$('#contato').animatescroll()"  class="nav-link">Contactos</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -49,16 +55,17 @@
             </div>
         </div>
     </header>
-    <section>
+    <section id="cervejas">
         <br>
-        <div class="container">   
+        <br>
+        <div class="container" class="mt-5">   
             <header>
                 <h2 class="text-center">Nossas cervejas</h2>
                 <hr>
             </header>
             <div class="card-columns">
                 <div class="card profile-card" ng-repeat="cerveja in cervejas">
-                    <div class="card-img-block" ng-show="cerveja.img">
+                    <div class="card-img-block mt-4" ng-show="cerveja.img">
                         <img class="card-img-top" ng-src="img/{{cerveja.img}}" alt="">
                     </div>
                     <div class="card-body">
@@ -82,16 +89,18 @@
         </div>
         <br>
     </section>
-    <section class="bg-historia">
+    <section class="bg-historia" id="historia">
         <canvas id="beerCanvas2"></canvas>
-        <div class="container my-3">
+        <div class="container mt-5">
+            <br>
+            <br>
             <br>
             <header>
                 <h2 class="text-center">História</h2>
                 <hr>
             </header>
             <div class="row">
-                <div class="col-sm-8 col-xs-12 text-justify">
+                <div class="col-md-offset-1 col-sm-8 col-xs-12 text-justify">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga, unde non modi est obcaecati nostrum sed numquam doloremque labore minus quae alias optio odit mollitia fugit cumque! Pariatur, consequatur!</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci sapiente veniam, tempore sit voluptates vero, amet ipsam quo corporis laborum error ullam a accusamus distinctio voluptatibus reprehenderit id. Unde, mollitia?</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci sapiente veniam, tempore sit voluptates vero, amet ipsam quo corporis laborum error ullam a accusamus distinctio voluptatibus reprehenderit id. Unde, mollitia?</p>
@@ -103,9 +112,9 @@
             <br>     
         </div>
     </section>
-    <section>
+    <section id="contato">
         <br>
-        <div class="container">
+        <div class="container mt-5">
             
             <header>
                 <h2 class="text-center">Contatos</h2>
@@ -114,29 +123,37 @@
             <div class="row">
                 <div class="col-sm-8">
                     <form>
-                        <div class="form-group float-label-controll">
+                        <div class="form-group float-label-control">
                             <label for="">Nome</label>
                             <input class="form-control" type="text" placeholder="Insira o seu nome"></div>
-                            <div class="form-group float-label-controll">
+                            <div class="form-group float-label-control">
                                 <label for="">E-mail</label>
                                 <input class="form-control" type="text" placeholder="Insira o e-mail"></div>
-                                <div class="form-group float-label-controll">
+                                <div class="form-group float-label-control">
                                     <label for="">Telefone</label>
                                     <input class="form-control" type="text" placeholder="Insira o seu contacto"></div>
-                                    <div class="form-group float-label-controll">
+                                    <div class="form-group float-label-control">
                                         <label for="">Minha Mensagem</label>
-                                        <input class="form-control" type="text" placeholder="Deixe a sua mensagem...">
+                                        <textarea class="form-control" type="text" placeholder="Deixe a sua mensagem..."></textarea>
                                     </div>
                                         <div class="clearfix">
                                             <div class="btn btn-outline-warning float-right text-dark">
-                                                <i class="fas fa-paper-plane">Enviar</i>
+                                                <i class="fas fa-paper-plane"></i>Enviar
                                             </div>
                                         </div>
                                     </form>
                                 </col-sm-8>
                             </div>
                             <div class="col-sm-4">
-                                
+                                <br>
+                                <b>Contato de Serviço e Compra</b><br>
+                                Telefone: +3651 22 888 79 80<br>
+                                <b>E-mail:</b><a href="mailto:zeebeer@zeebeer.com">zeebeer@zeebeer.com</a>
+                                <br>
+                                <b>Endereço</b><br>
+                                Rua das Quintas, Nº 995
+                                Leça do Balio - Matosinhos - Portugal<br>
+                                Código Postal: 4460-225<br>
                             </div>
                         </div>
                         <br>
@@ -216,6 +233,8 @@
                     <script src="js/angular-sanitize.js"></script>
                     <script src="js/script.js"></script>
                     <script src="js/appzeebeer.js"></script>
+                    <script src="js/contato.js"></script>
+                    <script src="js/animatescroll.min.js"></script>
                     
                 </body>
                 
